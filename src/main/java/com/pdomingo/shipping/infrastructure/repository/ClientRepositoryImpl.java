@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @Repository
 public class ClientRepositoryImpl implements ClientRepository {
@@ -21,5 +22,10 @@ public class ClientRepositoryImpl implements ClientRepository {
     public Client save(Client newClient) {
         storage.put(newClient.id(), newClient);
         return newClient;
+    }
+
+    @Override
+    public Optional<Client> findById(ClientId clientId) {
+        return Optional.empty();
     }
 }

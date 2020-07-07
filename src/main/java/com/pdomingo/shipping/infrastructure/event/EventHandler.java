@@ -1,6 +1,6 @@
 package com.pdomingo.shipping.infrastructure.event;
 
-import com.pdomingo.shipping.domain.event.ClientRegisteredEvent;
+import com.pdomingo.events.client.ClientEvents;
 import com.pdomingo.shipping.domain.port.primary.event.ClientRegisteredEventHandler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +15,7 @@ public class EventHandler {
 	private final ClientRegisteredEventHandler clientRegisteredEventHandler;
 
 	@RabbitListener(queues = "clientRegisteredQueue")
-	void onClientRegisteredEvent(ClientRegisteredEvent event) {
+	void onClientRegisteredEvent(ClientEvents.ClientRegisteredEvent event) {
 		clientRegisteredEventHandler.onClientRegisteredEvent(event);
 	}
 }

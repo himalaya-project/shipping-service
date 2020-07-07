@@ -1,6 +1,6 @@
 package com.pdomingo.shipping.domain.model;
 
-import com.pdoming.kernel.core.ddd.AggregateRoot;
+import com.pdomingo.kernel.core.ddd.AggregateRoot;
 import com.pdomingo.shipping.domain.model.ids.ShipmentId;
 
 import java.util.Objects;

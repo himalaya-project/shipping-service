@@ -1,6 +1,7 @@
 package com.pdomingo.shipping.domain.port.primary.event;
 
-import com.pdomingo.shipping.domain.event.ClientRegisteredEvent;
+
+import static com.pdomingo.events.client.ClientEvents.ClientRegisteredEvent;
 
 public interface ClientRegisteredEventHandler {
 

@@ -1,7 +1,7 @@
 package com.pdomingo.shipping.domain.adapter.usecase.event;
 
-import com.pdoming.kernel.core.vobjects.Address;
-import com.pdomingo.shipping.domain.event.ClientRegisteredEvent;
+import com.pdomingo.events.client.ClientEvents.ClientRegisteredEvent;
+import com.pdomingo.kernel.core.vobjects.Address;
 import com.pdomingo.shipping.domain.model.Client;
 import com.pdomingo.shipping.domain.model.ids.ClientId;
 import com.pdomingo.shipping.domain.port.primary.event.ClientRegisteredEventHandler;
@@ -20,8 +20,8 @@ public class ClientRegisteredEventHandlerAdapter implements ClientRegisteredEven
 	@Override
 	public void onClientRegisteredEvent(ClientRegisteredEvent event) {
 
-		ClientId clientId = event.getSourceId();
-		Address shippingAddress = event.getShippingAddress();
+		ClientId clientId = new ClientId(event.getClientId());
+		Address shippingAddress = null; // event.getShippingAddress(); TODO review
 
 		log.info("Registering new client <{}> on database", clientId);
 

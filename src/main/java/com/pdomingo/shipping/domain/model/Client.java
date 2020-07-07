@@ -1,9 +1,12 @@
 package com.pdomingo.shipping.domain.model;
 
-import com.pdoming.kernel.core.vobjects.Address;
+import com.pdomingo.kernel.core.ddd.AggregateRoot;
+import com.pdomingo.kernel.core.vobjects.Address;
 import com.pdomingo.shipping.domain.model.ids.ClientId;
 
-public class Client {
+public class Client extends AggregateRoot<ClientId> {
+
+	// A client can mutate independently from a Shipment (eg by modifying its shipping address) as such it's an Aggregate
 
 	private final ClientId clientId;
 	private final Address  shippingAddress;
@@ -13,8 +16,11 @@ public class Client {
 		this.shippingAddress = shippingAddress;
 	}
 
-
 	public ClientId id() {
 		return clientId;
+	}
+
+	public Address shippingAddress() {
+		return shippingAddress;
 	}
 }
