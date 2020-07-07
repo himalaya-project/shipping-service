@@ -12,4 +12,9 @@ public class Client {
 		this.clientId = clientId;
 		this.shippingAddress = shippingAddress;
 	}
+
+
+	public ClientId id() {
+		return clientId;
+	}
 }

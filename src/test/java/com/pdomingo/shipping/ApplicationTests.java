@@ -1,4 +1,4 @@
-package com.pdoming.client;
+package com.pdomingo.shipping;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.SpringBootConfiguration;
